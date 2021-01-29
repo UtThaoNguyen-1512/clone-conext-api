@@ -20,11 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('business', 'BusinessTypeController');
-Route::resource('explore', 'ExploreController');
-Route::resource('expersite', 'ExpertiseCotroller');
-Route::resource('event', 'EventController');
-Route::resource('voucher', 'VoucherController');
-Route::resource('workplace', 'WorkPlaceController');
+Route::resource('explores', 'ExploreController');
+Route::resource('expersites', 'ExpertiseCotroller');
+Route::resource('events', 'EventController');
+Route::resource('vouchers', 'VoucherController');
+Route::resource('workplaces', 'WorkPlaceController');
 // Route::get('place', 'PlaceController@index');
 
 // Route::get('business', "BusinessTypeController@index");

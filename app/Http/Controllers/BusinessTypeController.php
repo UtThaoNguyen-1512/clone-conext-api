@@ -19,6 +19,6 @@ class BusinessTypeController extends Controller
         return response()->json(
             $this->repository->getAll(), 200
         );
-        // return "ok";
     }
+
 }
