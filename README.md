@@ -6,17 +6,12 @@ Before you continue, ensure you meet the following requirements:
 * You are using a Linux or Windows.
 ## build setup
 ```bash
-# install dependencies
-$ yarn install
+# Dependencies
+$ install docker
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# serve with hot reload at localhost:9000
 
 # build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+docker-compose up
 ```
 
