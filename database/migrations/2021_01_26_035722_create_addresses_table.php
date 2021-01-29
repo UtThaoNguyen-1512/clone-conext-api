@@ -16,10 +16,10 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->decimal('longitude');
-            // $table->decimal('latitude');
-            // $table->boolean('is_active');
-            // $table->boolean('is_delete');
+            $table->decimal('longitude');
+            $table->decimal('latitude');
+            $table->boolean('is_active')->default(1)->comment('1:actived 0:unactived');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -16,11 +16,11 @@ class CreateVouchersTable extends Migration
         Schema::create('vouchers', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            // $table->date('is_expired');
-            // $table->string('image');
-            // $table->string('description');
-            // $table->boolean('is_active');
-            // $table->boolean('is_delete');
+            $table->date('is_expired');
+            $table->string('image');
+            $table->string('description');
+            $table->boolean('is_active')->default(1)->comment('1:actived 0:unactived');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

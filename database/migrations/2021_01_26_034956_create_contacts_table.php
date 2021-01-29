@@ -17,11 +17,11 @@ class CreateContactsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            // $table->string('phone_number');
-            // $table->string('subject');
-            // $table->string('content');
-            // $table->boolean('is_active');
-            // $table->boolean('is_delete');
+            $table->string('phone_number')->nullable();
+            $table->string('subject')->nullable();
+            $table->string('content')->nullable();
+            $table->boolean('is_active')->default(1)->comment('1:actived 0:unactived');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

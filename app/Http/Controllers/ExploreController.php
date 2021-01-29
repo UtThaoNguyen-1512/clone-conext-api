@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\BusinessTypeRepositoryImpl;
+use App\Repositories\ExploreRepositoryImpl;
 use Illuminate\Http\Request;
 
-
-class BusinessTypeController extends Controller
+class ExploreController extends Controller
 {
     protected $repository;
-    public function __construct(BusinessTypeRepositoryImpl $repository)
+    public function __construct(ExploreRepositoryImpl $repository)
     {
         $this->repository = $repository;
     }
@@ -17,7 +16,8 @@ class BusinessTypeController extends Controller
     public function index()
     {
         return response()->json(
-            $this->repository->getAll(), 200
+            $this->repository->getAll(),
+            200
         );
         // return "ok";
     }

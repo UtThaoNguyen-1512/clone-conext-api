@@ -16,8 +16,8 @@ class CreateExpertisesTable extends Migration
         Schema::create('expertises', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->boolean('is_active');
-            // $table->boolean('is_delete');
+            $table->boolean('is_active')->default(1)->comment('1:actived 0:unactived');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

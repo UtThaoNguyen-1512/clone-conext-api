@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('introduction');
             $table->string('seek');
             //$table->bigInteger('place_id')->unsigned();
-            $table->unsignedBigInteger('place_id');
+            $table->unsignedInteger('place_id');
             $table->foreign('place_id')->references('id')->on('places');
             // $table->unsignedBigInteger('country_id');
             // $table->foreign('country_id')->references('id')->on('countries');

@@ -17,10 +17,10 @@ class CreateWorkPlacesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('price');
-            // $table->string('image');
-            // $table->integer('addresses_id');
-            // $table->boolean('is_active');
-            // $table->boolean('is_delete');
+            $table->string('image');
+            $table->integer('addresses_id');
+            $table->boolean('is_active')->default(1)->comment('1:actived 0:unactived');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

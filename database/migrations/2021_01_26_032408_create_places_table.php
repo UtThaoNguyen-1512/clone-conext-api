@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 class CreatePlacesTable extends Migration
 {
@@ -17,16 +16,12 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->boolean('is_active');
-            $table->boolean('is_delete');
+            $table->boolean('is_active')->default(1)->comment('1:actived 0:unactived');
+            $table->softDeletes();
             $table->timestamps();
         });
 
-        DB::table('places')->insert([
-            'name' => 'Da Nang',
-            'is_active' => true,
-            'is_delete' => false,
-        ]);
+
 
     }
 

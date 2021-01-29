@@ -2,33 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ExpertiseRepositoryImpl;
 use Illuminate\Http\Request;
-use App\Repositories\PlaceRepositoryImpl;
 
-class PlaceController extends Controller
+class ExpertiseCotroller extends Controller
 {
     protected $repository;
-    public function __construct(PlaceRepositoryImpl $repository)
+    public function __construct(ExpertiseRepositoryImpl $repository)
     {
         $this->repository = $repository;
     }
 
     public function index()
     {
-        return response() -> json(
-            $this->repository->getAll(), 200
+        return response()->json(
+            $this->repository->getAll(),
+            200
         );
     }
+
 
     public function create()
     {
         //
     }
 
-    // public function store(Request $request)
-    // {
-    //     return response() -> json("Saved!", 201);
-    // }
+
+    public function store(Request $request)
+    {
+        //
+    }
+
 
     public function show($id)
     {
